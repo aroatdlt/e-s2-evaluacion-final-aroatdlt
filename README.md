@@ -1,4 +1,4 @@
-##Evaluación final Sprint-2 Aroa Tato
+#Evaluación final Sprint-2 Aroa Tato
 
 ![Adalab](_src/assets/images/logo-adalab-80px.png)
 # Adalab web starter kit
