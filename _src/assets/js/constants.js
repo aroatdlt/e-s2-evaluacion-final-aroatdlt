@@ -14,7 +14,7 @@ let newContent = "";
 let eachTvserie = "";
 let tvSerieImages = "";
 let allElements = "";
-let infoFromLocalStorage = "";
+const infoFromLocalStorage = "";
 
 const infoLocalStorage = {
     "id": []
