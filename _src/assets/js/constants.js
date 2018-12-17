@@ -1,5 +1,3 @@
-'use strict';
-
 //In this file we could find most of the principal declarate constant
 
 const inputEl = document.querySelector('.input__element');
