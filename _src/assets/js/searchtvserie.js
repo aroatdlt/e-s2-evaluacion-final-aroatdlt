@@ -46,7 +46,7 @@ function handleClickFunction() {
         allElements[i].addEventListener('click', clickFavoriteTvseries);
       };
       function clickFavoriteTvseries(event){
-        let selectedTvserie = event.currentTarget;
+        const selectedTvserie = event.currentTarget;
         selectedTvserie.classList.toggle('selected__favorite');
         infoSendLocalStorage = eachTvserie.id;
         //Here we send information to localstorage
