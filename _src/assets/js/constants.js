@@ -2,6 +2,11 @@
 
 const inputEl = document.querySelector('.input__element');
 const button = document.querySelector('.button');
+const listUlEl = document.querySelector('.list__tvserie');
 let listEl = "";
 let imageTvserie = "";
 let titleTvserie = "";
+let newItem = "";
+let newImage = "";
+let newTitle = "";
+let newContent = "";
