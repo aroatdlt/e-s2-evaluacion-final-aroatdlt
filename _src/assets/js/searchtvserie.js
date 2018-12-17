@@ -18,7 +18,6 @@ function handleClickFunction() {
           newImage.className = "image__tvserie";
           newImage.src = `${imageTvserie}`;
         };
-        
         //With all the information, we want to write the information in our web (title&photo)
         titleTvserie = eachTvserie.name;
         //Write this information in html
@@ -34,7 +33,21 @@ function handleClickFunction() {
         //Add image and title to li
         newItem.append(newImage, newTitle);
       }
+      allElements = document.querySelectorAll('li');
+      console.log(allElements); 
+      for (let i = 0; i < allElements.length; i++) {
+        allElements[i].addEventListener('click', clickFavoriteTvseries);
+      };
+      function clickFavoriteTvseries(event){
+        let selectedTvserie = event.currentTarget;
+        selectedTvserie.classList.toggle('selected__favorite');
+      };
     })
 };
 
 button.addEventListener('click', handleClickFunction);
+
+
+
+
+
