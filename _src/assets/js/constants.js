@@ -2,3 +2,6 @@
 
 const inputEl = document.querySelector('.input__element');
 const button = document.querySelector('.button');
+let listEl = "";
+let imageTvserie = "";
+let titleTvserie = "";
