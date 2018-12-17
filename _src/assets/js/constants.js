@@ -10,3 +10,5 @@ let newItem = "";
 let newImage = "";
 let newTitle = "";
 let newContent = "";
+let eachTvserie = "";
+let tvSerieImages = "";
