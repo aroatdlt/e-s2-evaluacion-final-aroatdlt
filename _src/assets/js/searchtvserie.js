@@ -37,10 +37,10 @@ function handleClickFunction() {
         newItem.append(newImage, newTitle);
       }
       //We search in local storage if this search is already in local storage
-      const infoFromLocalStorage = localStorage.getItem('id');
+      const infoFromLocalStorage = localStorage.getItem('id_list');
       allElements = document.querySelectorAll('li');
       for (let i = 0; i < allElements.length; i++) {
-        if (infoFromLocalStorage === allElements[i].id) {
+        if (infoFromLocalStorage.includes(allElements[i].id)) {
           allElements[i].classList.add('selected__favorite');
         }
         //Now we want to highlight our favorite shows. We will storage all the lis elements and add a listener.
@@ -52,13 +52,21 @@ function handleClickFunction() {
         selectedTvserie.classList.toggle('selected__favorite');
         //Here we send information to localstorage
         let allFavoriteTvSerie = document.querySelectorAll('.selected__favorite');
+        let arrFavorites = [];
         for (const favoriteTvserie of allFavoriteTvSerie) {
-          infoLocalStorage.id = favoriteTvserie.id;
+          const savedInfo = parseInt(favoriteTvserie.id);
+          arrFavorites.push(savedInfo);
         }
-        localStorage.setItem('infoLocalStorage', infoLocalStorage);
+        localStorage.setItem('id_list', arrFavorites);
       };
     })
 };
 
 button.addEventListener('click', handleClickFunction);
+
+// function handleDeleteInfo(){
+//     listUlEl.remove(newItem);
+// };
+
+// inputEl.addEventListener('keydown', handleDeleteInfo);
 
