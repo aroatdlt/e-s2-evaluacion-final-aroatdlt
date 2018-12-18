@@ -2,7 +2,6 @@
 
 function handleClickFunction() {
   let inputValue = inputEl.value;
-
   fetch(`http://api.tvmaze.com/search/shows?q=${inputValue}`)
     .then(response => response.json())
     .then(datasTvserie => {
@@ -43,14 +42,14 @@ function handleClickFunction() {
         if (infoFromLocalStorage.includes(allElements[i].id)) {
           allElements[i].classList.add('selected__favorite');
         }
-        //Now we want to highlight our favorite shows. We will storage all the lis elements and add a listener.
+        //Using this for, we get all favorites and we add a listener in each one. 
         allElements[i].addEventListener('click', clickFavoriteTvseries);
       }
-
+      //Now we want to highlight our favorite shows. We will storage all the lis elements and add a listener.
       function clickFavoriteTvseries(event) {
         const selectedTvserie = event.currentTarget;
         selectedTvserie.classList.toggle('selected__favorite');
-        //Here we send information to localstorage
+        //Here we send this information to localstorage
         let allFavoriteTvSerie = document.querySelectorAll('.selected__favorite');
         let arrFavorites = [];
         for (const favoriteTvserie of allFavoriteTvSerie) {
@@ -60,13 +59,16 @@ function handleClickFunction() {
         localStorage.setItem('id_list', arrFavorites);
       };
     })
+    function deleteInfo() {
+      listUlEl.remove(newItem);
+    };
+    inputEl.addEventListener('change', deleteInfo);
 };
 
 button.addEventListener('click', handleClickFunction);
 
-// function handleDeleteInfo(){
-//     listUlEl.remove(newItem);
-// };
 
-// inputEl.addEventListener('keydown', handleDeleteInfo);
+
+
+
 
