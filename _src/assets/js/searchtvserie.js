@@ -53,9 +53,9 @@ function handleClickFunction() {
         //Here we send information to localstorage
         let allFavoriteTvSerie = document.querySelectorAll('.selected__favorite');
         for (const favoriteTvserie of allFavoriteTvSerie) {
-          localStorage.setItem('id', favoriteTvserie.id);
+          infoLocalStorage.id = favoriteTvserie.id;
         }
-
+        localStorage.setItem('infoLocalStorage', infoLocalStorage);
       };
     })
 };
