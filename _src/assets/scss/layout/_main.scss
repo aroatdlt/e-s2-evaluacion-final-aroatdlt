@@ -1,0 +1,50 @@
+.page__main {
+    height: 80vh;
+}
+
+.container__search{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.input__element {
+   border: 0; 
+   border-bottom: 1px solid black;
+   width: 300px;
+   height: 40px;
+   font-size: 25px;
+}
+
+.list__tvserie {
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    justify-content: center;
+}
+
+.info__tvserie {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    padding: 30px 40px 20px 40px;
+    background-color: #ffcccc;
+    display: flex;
+    flex-direction: column;
+}
+
+.image__tvserie {
+    width: 210px;
+    height: 295px;
+}
+
+.name__tvserie {
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    color: #B53471;
+    width: 210px;
+    margin-top: 15px;
+    text-align: center;
+}
