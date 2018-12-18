@@ -32,6 +32,7 @@
     background-color: #ffcccc;
     display: flex;
     flex-direction: column;
+    border-radius: 5px;
 }
 
 .image__tvserie {
@@ -47,4 +48,11 @@
     width: 210px;
     margin-top: 15px;
     text-align: center;
+}
+
+.selected__favorite {
+    background-color:#32ff7e;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 4px 10px 10px 0px rgba(122,118,122,1);
 }
