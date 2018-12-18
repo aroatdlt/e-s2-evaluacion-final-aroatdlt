@@ -2,6 +2,7 @@
 
 function handleClickFunction() {
   let inputValue = inputEl.value;
+  inputEl.addEventListener('change', deleteInfo);
   fetch(`http://api.tvmaze.com/search/shows?q=${inputValue}`)
     .then(response => response.json())
     .then(datasTvserie => {
@@ -64,3 +65,7 @@ function handleClickFunction() {
 };
 
 button.addEventListener('click', handleClickFunction);
+
+function deleteInfo() {
+  listUlEl.remove(newItem);
+};
