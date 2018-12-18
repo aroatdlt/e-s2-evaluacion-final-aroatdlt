@@ -17,7 +17,10 @@
 	},
 	"js": {
 		"src": [
-			"_src/assets/js/main.js"
+      "_src/assets/js/main.js",
+      "_src/assets/js/constants.js",
+      "_src/assets/js/searchtvserie.js"
+      
 		],
 		"dest": "public/assets/js/",
     "dist": "docs/assets/js/"
