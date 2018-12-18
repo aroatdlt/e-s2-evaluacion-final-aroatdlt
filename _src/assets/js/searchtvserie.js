@@ -59,6 +59,7 @@ function handleClickFunction() {
         localStorage.setItem('id_list', arrFavorites);
       };
     })
+
     function deleteInfo() {
       listUlEl.remove(newItem);
     };
