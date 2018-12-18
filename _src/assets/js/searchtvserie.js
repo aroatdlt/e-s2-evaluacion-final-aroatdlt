@@ -36,7 +36,7 @@ function handleClickFunction() {
         newItem.append(newImage, newTitle);
       }
       //We search in local storage if this search is already in local storage
-      infoLocalStorage = localStorage.getItem('id_list');
+      infoLocalStorage = localStorage.getItem('idList');
       allElements = document.querySelectorAll('li');
       for (let i = 0; i < allElements.length; i++) {
         if (infoLocalStorage.includes(allElements[i].id)) {
@@ -56,7 +56,7 @@ function handleClickFunction() {
           const savedInfo = parseInt(favoriteTvserie.id);
           arrFavorites.push(savedInfo);
         }
-        localStorage.setItem('id_list', arrFavorites);
+        localStorage.setItem('idList', arrFavorites);
       };
     })
 };

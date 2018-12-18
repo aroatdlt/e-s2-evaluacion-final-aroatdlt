@@ -15,6 +15,5 @@ let eachTvserie = "";
 let tvSerieImages = "";
 let allElements = "";
 let infoLocalStorage = {
-    "id_list": []
+    'idList': []
 };
-
