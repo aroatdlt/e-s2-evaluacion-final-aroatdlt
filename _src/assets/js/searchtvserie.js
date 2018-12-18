@@ -34,36 +34,31 @@ function handleClickFunction() {
         newTitle.appendChild(newContent);
         //Add image and title to li
         newItem.append(newImage, newTitle);
+      }
+      //We search in local storage if this search is already in local storage
+      infoLocalStorage = localStorage.getItem('id_list');
+      allElements = document.querySelectorAll('li');
+      for (let i = 0; i < allElements.length; i++) {
+        if (infoLocalStorage.includes(allElements[i].id)) {
+          allElements[i].classList.add('selected__favorite');
+        }
+        //Using this for, we get all favorites and we add a listener in each one. 
+        allElements[i].addEventListener('click', clickFavoriteTvseries);
+      }
+      //Now we want to highlight our favorite shows. We will storage all the lis elements and add a listener.
+      function clickFavoriteTvseries(event) {
+        const selectedTvserie = event.currentTarget;
+        selectedTvserie.classList.toggle('selected__favorite');
+        //Here we send this information to localstorage
+        let allFavoriteTvSerie = document.querySelectorAll('.selected__favorite');
+        let arrFavorites = [];
+        for (const favoriteTvserie of allFavoriteTvSerie) {
+          const savedInfo = parseInt(favoriteTvserie.id);
+          arrFavorites.push(savedInfo);
+        }
+        localStorage.setItem('id_list', arrFavorites);
       };
     })
-  //We search in local storage if this search is already in local storage
-  const infoFromLocalStorage = localStorage.getItem('id_list');
-  allElements = document.querySelectorAll('li');
-  if (infoFromLocalStorage !== null) {
-    for (let i = 0; i < allElements.length; i++) {
-      if (infoFromLocalStorage.includes(allElements[i].id)) {
-        allElements[i].classList.add('selected__favorite');
-      };
-    };
-  };
-  for (let i = 0; i < allElements.length; i++) {
-    //We get all favorites and we add a listener in each one. 
-    allElements[i].addEventListener('click', clickFavoriteTvseries);
-  };
-  //Now we want to highlight our favorite shows. We will storage all the lis elements and add a listener.
-  function clickFavoriteTvseries(event) {
-    const selectedTvserie = event.currentTarget;
-    selectedTvserie.classList.toggle('selected__favorite');
-    //Here we send this information to localstorage
-    let allFavoriteTvSerie = document.querySelectorAll('.selected__favorite');
-    let arrFavorites = [];
-    for (const favoriteTvserie of allFavoriteTvSerie) {
-      const savedInfo = parseInt(favoriteTvserie.id);
-      arrFavorites.push(savedInfo);
-    }
-    localStorage.setItem('id_list', arrFavorites);
-  };
-
 };
 
 button.addEventListener('click', handleClickFunction);
